@@ -17,7 +17,7 @@
                 <a class="left-side" href="#index.php">News</a>
                 <a class="left-side" href="#index.php">Contact</a>
                 <a class="left-side" href="#index.php">About</a>
-                <a class="right-side" href="includes/login.php">Login</a>
-                <a class="right-side" href="includes/signup.php">Signup</a> 
+                <a class="right-side" href="login.php">Login</a>
+                <a class="right-side" href="signup.php">Signup</a> 
             </div>                
         </header>
