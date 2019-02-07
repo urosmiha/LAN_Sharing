@@ -31,23 +31,23 @@
 </head>
 <body style="background-color: #999999;">
 	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="login100-more" style="background:white"></div>
+	<!-- <div class="limiter"> -->
+		<!-- <div class="container-login100"> -->
+			<!-- <div class="login100-more" style="background:white"></div> -->
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="includes/signup.inc.php" method="post">
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
 
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
-						<input class="input100" type="text" name="name" placeholder="First Name...">
+						<input class="input100" type="text" name="fname" placeholder="First Name...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
-						<input class="input100" type="text" name="name" placeholder="Last Name...">
+						<input class="input100" type="text" name="lname" placeholder="Last Name...">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -57,24 +57,24 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Username is required">
-						<input class="input100" type="text" name="username" placeholder="Username...">
+						<input class="input100" type="text" name="uname" placeholder="Username...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="text" name="pass" placeholder="Password...">
+						<input class="input100" type="password" name="psw" placeholder="Password...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
-						<input class="input100" type="text" name="repeat-pass" placeholder="Repeat Password...">
+						<input class="input100" type="password" name="repsw" placeholder="Repeat Password...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button name="signup-submit" class="login100-form-btn">
 								Sign Up
 							</button>
 						</div>
@@ -86,8 +86,8 @@
 					</div>
 				</form>
 			</div>
-		</div>
-	</div>
+		<!-- </div> -->
+	<!-- </div> -->
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
