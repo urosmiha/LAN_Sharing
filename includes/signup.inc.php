@@ -31,12 +31,12 @@
         }
         else {
             // Check if username is taken. Make sure to use placeholder (?)
-            $sql = "SELECT username FROM users WHERE username=?";
+            $sql = "SELECT userName FROM users WHERE userName=?";
             $statement = mysqli_stmt_init($conn);
 
             // Check if it's safe to execute the sql command.
-            if (!my_sqli_stmt_prepare($statement, $sql)) {
-                header("Location: ../signup.php?error=sqlerror");
+            if (!mysqli_stmt_prepare($statement, $sql)) {
+                header("Location: ../signup.php?error=sqlerror&fname=".$firstName."&lname=".$lastName."&email=".$email."&uname=".$username);
                 exit();
             }
             else {
@@ -50,11 +50,11 @@
                     exit();
                 }
                 else {
-                    $sql = "INSER INTO users (userName, firstName, lastName, userEmail, pwdUsers, userPrivelage) VALUES (?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO users (userName, firstName, lastName, userEmail, pwdUsers, userPrivelage) VALUES (?, ?, ?, ?, ?, ?)";
                     $statement = mysqli_stmt_init($conn);
                     // Check if it's safe to execute the sql command.
-                    if (!my_sqli_stmt_prepare($statement, $sql)) {
-                        header("Location: ../signup.php?error=sqlerror");
+                    if (!mysqli_stmt_prepare($statement, $sql)) {
+                        header("Location: ../signup.php?error=sqlerror&fname=".$firstName."&lname=".$lastName."&email=".$email."&uname=".$username);
                         exit();
                     }
                     else {
