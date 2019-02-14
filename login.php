@@ -37,7 +37,7 @@
 						Account Login
 					</span>
 
-					<span class="txt1 p-b-11">
+					<span name="username" class="txt1 p-b-11">
 						Username
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
@@ -45,7 +45,7 @@
 						<span class="focus-input100"></span>
 					</div>
 					
-					<span class="txt1 p-b-11">
+					<span name="password" class="txt1 p-b-11">
 						Password
 					</span>
 					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
@@ -71,7 +71,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button name="login-submit" class="login100-form-btn">
 							Login
                         </button>
                     </div>
