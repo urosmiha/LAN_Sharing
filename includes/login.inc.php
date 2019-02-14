@@ -3,10 +3,10 @@
         require 'dbh.inc.php';
 
         $mailuid = $_POST['username'];
-        $password = $_POST['password'];
+        $password = $_POST['pswd'];
 
         if (empty($mailuid) || empty($password)) {
-            header("Location: ../index.php?error=emptyfields");
+            header("Location: ../login.php?error=emptyfields");
             exit();
         }
         else {
@@ -16,7 +16,7 @@
 
             // Check if all-good
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                header("Location: ../index.php?error=sqlfailed");
+                header("Location: ../login.php?error=sqlfailed");
                 exit();
             }
             else {
@@ -26,26 +26,28 @@
 
                 if ($row = mysqli_fetch_assoc($result)) {
                     if (!password_verify($password, $row['pwdUsers'])) {
-                        header("Location: ../index.php?error=wrongpassword");
+                        header("Location: ../login.php?error=wrongpassword&username=".$mailuid);
                         exit();
                     }
                     else if (password_verify($password, $row['pwdUsers'])) {
                         // Start the session to keep user logged in
                         session_start();
+                        // Store user ID and username
                         $_SESSION['userId'] = $row['userName'];
                         $_SESSION['userUid'] = $row['idUsers'];
-
+                        
+                        // SUCCESS! Go to main page
                         header("Location: ../index.php?error=success");
                         exit();
                     }
                     else {
-                        header("Location: ../index.php?error=unknownerror");
+                        header("Location: ../login.php?error=unknownerror");
                         exit();
                     }
 
                 }
                 else {
-                    header("Location: ../index.php?error=invaliduser");
+                    header("Location: ../login.php?error=invaliduser");
                     exit();
                 }
             }
@@ -53,6 +55,6 @@
 
     }
     else {
-        header("Location: ../index.php");
+        header("Location: ../login.php");
         exit();
     }

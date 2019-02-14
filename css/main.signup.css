@@ -191,7 +191,7 @@ iframe {
 
 
 .wrap-login100 {
-  width: 600px;
+  width: 520px;
   min-height: 100vh;
   background: #fff;
   border-radius: 2px;
@@ -443,7 +443,7 @@ iframe {
 .alert-validate::before {
   content: attr(data-validate);
   position: absolute;
-  max-width: 50%;
+  max-width: 70%;
   background-color: #fff;
   border: 1px solid #c80000;
   border-radius: 2px;
