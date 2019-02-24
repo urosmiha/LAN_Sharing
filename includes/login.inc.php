@@ -11,7 +11,7 @@
         }
         else {
             // Get all the records for users which match provided username and email
-            $sql = "SELECT * FROM users WHERE userName=? OR userEmail=?;";
+            $sql = "SELECT * FROM musers WHERE userName=? OR userEmail=?;";
             $stmt = mysqli_stmt_init($conn);
 
             // Check if all-good

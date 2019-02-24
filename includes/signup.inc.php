@@ -31,7 +31,7 @@
         }
         else {
             // Check if username is taken. Make sure to use placeholder (?)
-            $sql = "SELECT userName FROM users WHERE userName=?";
+            $sql = "SELECT userName FROM musers WHERE userName=?";
             $statement = mysqli_stmt_init($conn);
 
             // Check if it's safe to execute the sql command.
@@ -50,7 +50,7 @@
                     exit();
                 }
                 else {
-                    $sql = "INSERT INTO users (userName, firstName, lastName, userEmail, pwdUsers, userPrivelage) VALUES (?, ?, ?, ?, ?, ?)";
+                    $sql = "INSERT INTO musers (userName, firstName, lastName, userEmail, pwdUsers, userPrivelage) VALUES (?, ?, ?, ?, ?, ?)";
                     $statement = mysqli_stmt_init($conn);
                     // Check if it's safe to execute the sql command.
                     if (!mysqli_stmt_prepare($statement, $sql)) {

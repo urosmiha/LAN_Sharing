@@ -24,7 +24,7 @@
                 
                 <?php
                     if (isset($_SESSION['userId'])) {
-                        echo "<a class='right-side' href='login.php'>Logout</a>";
+                        echo "<a href='includes/logout.inc.php' class='right-side'>Logout</a>";
                     }
                 ?>
                 
