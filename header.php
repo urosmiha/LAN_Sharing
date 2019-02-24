@@ -21,7 +21,13 @@
                 <a class="left-side" href="#index.php">News</a>
                 <a class="left-side" href="#index.php">Contact</a>
                 <a class="left-side" href="#index.php">About</a>
-                <a class="right-side" href="login.php">Login</a>
-                <a class="right-side" href="signup.php">Signup</a> 
+                
+                <?php
+                    if (isset($_SESSION['userId'])) {
+                        echo "<a class='right-side' href='login.php'>Logout</a>";
+                    }
+                ?>
+                
+                
             </div>                
         </header>
