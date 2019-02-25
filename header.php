@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,15 +12,22 @@
     </head>
     <body>
         <header>
-            <nav>
-                <a href="#">
+            <link rel="stylesheet" href="style/header.style.css">
+            <div class="topnav">
+                <a class="left-side" href="#">
                     <img src="img/duckling.png" alt="logo">
                 </a>
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php">Portfolio</a></li>
-                    <li><a href="index.php">About me</a></li>
-                    <li><a href="index.php">Contact</a></li>
-                </ul>
-            </nav>
+                <a class="left-side" href="#index.php">Home</a>
+                <a class="left-side" href="#index.php">News</a>
+                <a class="left-side" href="#index.php">Contact</a>
+                <a class="left-side" href="#index.php">About</a>
+                
+                <?php
+                    if (isset($_SESSION['userId'])) {
+                        echo "<a href='includes/logout.inc.php' class='right-side'>Logout</a>";
+                    }
+                ?>
+                
+                
+            </div>                
         </header>
